@@ -23,9 +23,9 @@ for jj = 0 : nYY-1
      for ii = 0 : nXX-1
          i = ii*xStep;
          A = floor([j,i]);
-         B = A + [1, 0];
+         B = A + [0, 1];
          C = A + [1, 1];
-         D = A + [0, 1];
+         D = A + [1, 0];
          if i >= XX-1 || j >= YY-1
             nI(jj+1,ii+1) = Img2(A(1)+1,A(2)+1);
             continue
