@@ -1,4 +1,0 @@
-clearvars; close all; clc;
-
-figure(1);
-LUT(imread('lena.bmp'),

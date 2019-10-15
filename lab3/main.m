@@ -2,22 +2,24 @@ clearvars; close all; clc;
 
 load funkcjeLUT;
 figure(1);
-LUT(imread('lena.bmp'),kwadratowa);
+
+lena = imread('lena.bmp');
+LUT(lena, kwadratowa);
 
 figure(2);
-LUT(imread('lena.bmp'),log);
+LUT(lena, log);
 
 figure(3);
-LUT(imread('lena.bmp'),odwlog);
+LUT(lena, odwlog);
 
 figure(4);
-LUT(imread('lena.bmp'),odwrotna);
+LUT(lena, odwrotna);
 
 figure(5);
-LUT(imread('lena.bmp'),pierwiastkowa);
+LUT(lena ,pierwiastkowa);
 
 figure(6);
-LUT(imread('lena.bmp'),pila);
+LUT(lena, pila);
 
 figure(7);
-LUT(imread('lena.bmp'),wykladnicza);
+LUT(lena ,wykladnicza);
