@@ -6,9 +6,6 @@ figure(1);
 subplot(3,3,1);
 imshow(Img);
 
-% pic = bitand(uint8(ones(X,Y,Z))*2^6, Img)/2^6*255;
-% imshow(pic);
-
 bitplanesliced = uint8(zeros(8, X, Y, Z));
 
 for i = 0:7
