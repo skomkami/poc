@@ -26,6 +26,7 @@ imshow(lena4);
 subplot(4,2,8);
 imhist(lena4,256);
 
+%% rozciągnięcie histogramu -> imadjust
 figure(2);
 hist1 = imread('hist1.bmp');
 subplot(1,2,1);
@@ -58,13 +59,20 @@ legend('histogram','histogram skumulowany');
 lut = C2*255/max(C2);
 lut = uint8(lut);
 histlut = intlut(hist1, lut);
+[Hlut, xlut] = imhist(histlut, 256);
+Clut = cumsum(Hlut);
+klut = max(Clut)/max(Hlut);
+C2lut = Clut/klut;
+
 figure(5);
 subplot(3,1,1);
 imshow(histlut);
 subplot(3,1,2);
-plot(x,H);
+plot(xlut,Hlut);
+title('Histogram');
 subplot(3,1,3);
-plot(x,C2);
+plot(xlut,C2lut);
+title('Histogram skumulowany');
 
 %% 13
 
@@ -75,9 +83,11 @@ subplot(3,1,1);
 imshow(X);
 subplot(3,1,2);
 imhist(X,256);
+title('Histogram wyrównany');
 subplot(3,1,3);
 J = adapthisteq(hist1);
 imhist(J);
+title('Histogram wyrównany CLAHE');
 
 %14
 
@@ -91,32 +101,44 @@ hist4adj = imadjust(hist4);
 figure(7);
 subplot(2,2,1);
 imshow(hist2);
+title('Originał');
 subplot(2,2,2);
 imshow(hist2adj);
+title('Rozciąganie');
 subplot(2,2,3);
 histeq(hist2, 256);
+title('Wyrównanie HE');
 subplot(2,2,4);
 J = adapthisteq(hist2);
 imshow(J);
+title('Wyrównanie CLAHE');
 
 figure(8);
 subplot(2,2,1);
 imshow(hist3);
+title('Originał');
 subplot(2,2,2);
 imshow(hist3adj);
+title('Rozciąganie');
 subplot(2,2,3);
 histeq(hist3, 256);
+title('Wyrównanie HE');
 subplot(2,2,4);
 J = adapthisteq(hist3);
 imshow(J);
+title('Wyrównanie CLAHE');
 
 figure(9);
 subplot(2,2,1);
 imshow(hist4);
+title('Originał');
 subplot(2,2,2);
 imshow(hist4adj);
+title('Rozciąganie');
 subplot(2,2,3);
 histeq(hist4, 256);
+title('Wyrównanie HE');
 subplot(2,2,4);
 J = adapthisteq(hist4);
 imshow(J);
+title('Wyrównanie CLAHE');
