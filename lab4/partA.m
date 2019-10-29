@@ -55,7 +55,7 @@ plot(x,C2);
 hold off;
 legend('histogram','histogram skumulowany');
 
-% lut
+%% lut
 lut = C2*255/max(C2);
 lut = uint8(lut);
 histlut = intlut(hist1, lut);
