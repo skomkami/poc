@@ -1,25 +1,12 @@
 clearvars; close all; clc;
 
+winSize = 15;
+
 rice = imread('rice.png');
-[X Y] = size(rice);
+localBinearization(rice, 1, 9);
 
-riceCopy = rice;
+katalog = imread('katalog.bmp');
+localBinearization(katalog, 2, 8);
 
-for i = 1:X
-    for j = 1:Y
-        mean = meanLT(i,j, 9, rice, X, Y);
-        if rice(i,j) < mean
-            riceCopy(i,j) = 0;
-        else
-            riceCopy(i,j) = 255;
-        end
-    end
-end
-
-figure(1);
-subplot(1,2,1);
-imshow(rice);
-title('Obraz originalny');
-subplot(1,2,2);
-imshow(riceCopy);
-title('Obraz zbinearyzowany');
+localBinSauvol(rice, 3, 8);
+localBinSauvol(katalog, 4, 8);
