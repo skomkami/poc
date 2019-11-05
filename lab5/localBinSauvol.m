@@ -11,8 +11,7 @@ for i = 1:X
     for j = 1:Y
         mean = meanLT(i,j, winSize, img, X, Y);
         stddev = stddevLT(i,j,winSize, img, mean, X, Y);
-        T = mean * (1 + k*(stddev/R - 1));
-        k*(stddev/R - 1)
+        T = mean * (1 - k*(stddev/R - 1));
         if img(i,j) < T
             imgCopy(i,j) = 0;
         else
