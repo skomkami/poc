@@ -1,0 +1,8 @@
+close all; clearvars; clc;
+
+moon = imread('moon.bmp');
+M = [0 1 0; 1 -4 1; 0 1 0];
+
+M = M / 9;
+
+moonConv =  uint8(conv2(board, filter3, 'same'));
