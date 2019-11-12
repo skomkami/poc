@@ -24,24 +24,33 @@ title('Moduł różnicy');
 filter5 = fspecial('average', 5);
 filter9 = fspecial('average', 9);
 filter15 = fspecial('average', 15);
+filter35 = fspecial('average', 35);
 
 convulsed5 = uint8(conv2(board, filter5, 'same'));
 convulsed9 = uint8(conv2(board, filter9, 'same'));
 convulsed15 = uint8(conv2(board, filter15, 'same'));
+convulsed35 = uint8(conv2(board, filter35, 'same'));
 
 figure(2);
-subplot(2,2,1);
+subplot(3,2,1);
 imshow(convulsed);
 title('Obraz skonwolutowany o rozmiarze okna 3');
-subplot(2,2,2);
+subplot(3,2,2);
 imshow(convulsed5);
 title('Obraz skonwolutowany o rozmiarze okna 5');
-subplot(2,2,3);
+subplot(3,2,3);
 imshow(convulsed9);
 title('Obraz skonwolutowany o rozmiarze okna 9');
-subplot(2,2,4);
+subplot(3,2,4);
 imshow(convulsed15);
 title('Obraz skonwolutowany o rozmiarze okna 15');
+subplot(3,2,5);
+imshow(convulsed35);
+title('Obraz skonwolutowany o rozmiarze okna 35');
+subplot(3,2,6);
+imshow(board);
+title('Obraz originalny');
+
 
 %% lena
 
@@ -50,24 +59,31 @@ convulsedLena3 = uint8(conv2(lena, filter3, 'same'));
 convulsedLena5 = uint8(conv2(lena, filter5, 'same'));
 convulsedLena9 = uint8(conv2(lena, filter9, 'same'));
 convulsedLena15 = uint8(conv2(lena, filter15, 'same'));
+convulsedLena35 = uint8(conv2(lena, filter35, 'same'));
 
 figure(3);
 imshow(lena);
 title('Obraz originalny');
 
 figure(4);
-subplot(2,2,1);
+subplot(3,2,1);
 imshow(convulsedLena3);
 title('Obraz skonwolutowany o rozmiarze okna 3');
-subplot(2,2,2);
+subplot(3,2,2);
 imshow(convulsedLena5);
 title('Obraz skonwolutowany o rozmiarze okna 5');
-subplot(2,2,3);
+subplot(3,2,3);
 imshow(convulsedLena9);
 title('Obraz skonwolutowany o rozmiarze okna 9');
-subplot(2,2,4);
+subplot(3,2,4);
 imshow(convulsedLena15);
 title('Obraz skonwolutowany o rozmiarze okna 15');
+subplot(3,2,5);
+imshow(convulsedLena35);
+title('Obraz skonwolutowany o rozmiarze okna 35');
+subplot(3,2,6);
+imshow(lena);
+title('Obraz originalny');
 
 %% dobór maski
 
