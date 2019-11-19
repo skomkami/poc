@@ -21,7 +21,7 @@ for i = 1:Nx
 
    gamma = exp(- dist .^2 / 2 / sig^2);
    
-   data_filtered(i) = sum(sum(patch .* h .*dist .* gamma));%/ sum(sum(dist .* gamma .* h));
+   data_filtered(i) = sum(sum(patch .* h .*dist .* gamma));
 
 end
 end
