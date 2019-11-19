@@ -9,7 +9,7 @@ Nx = size(data,2);
 Ncy = ceil(local_window(1)/2);
 Ncx = ceil(local_window(2)/2);
 
-sig = 0.7;
+sig = 5;
 
 for i = 1:Nx
    patch = reshape(data(:,i), local_window);
@@ -18,10 +18,12 @@ for i = 1:Nx
    rows = reshape(rows, local_window);
    cols = reshape(cols, local_window);
    dist = sqrt((Ncy-rows).^2 + (Ncx -cols).^2);
-
-   gamma = exp(- dist .^2 / 2 / sig^2);
    
-   data_filtered(i) = sum(sum(patch .* h .*dist .* gamma));
+   absolute = abs(patch - patch(Ncy,Ncx));
+
+   gamma = exp(- absolute .^2 / 2 / sig^2);
+   
+   data_filtered(i) = sum(sum(patch .* h .*dist .* gamma))/ sum(sum(dist .* gamma));
 
 end
 end
