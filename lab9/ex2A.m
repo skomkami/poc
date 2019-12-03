@@ -46,3 +46,4 @@ figure(5);
 imshow(img,[]);
 hold on;
 plot(xAxis+1, yAxis+1);
+hold off;
