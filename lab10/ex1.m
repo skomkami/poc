@@ -9,10 +9,9 @@ imgSize = size(img);
 
 img = double(img);
 
-% coordinates = ginput(1);
-% [x,y] = floor(ginput(1));
+coordinates = floor(ginput(1));
 
-coordinates = [100,300];
+% coordinates = [100,300];
 
 segmented = zeros(size(img));
 visited = zeros(size(img));
