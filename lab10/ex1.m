@@ -26,7 +26,7 @@ stack(iStack,:) = coordinates;
 segmented(y,x) = 1;
 visited(y,x) = 1;
 
-threshold = 50;
+threshold = 30;
 
 nS = 0;
 mV = 0;
