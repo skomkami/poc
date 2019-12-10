@@ -1,7 +1,7 @@
 close all; clearvars; clc;
 global treshold limit segRes index MRes;
 
-treshold = 0.05;
+treshold = 0.03;
 limit = 5;
 index = 1;
 
@@ -44,7 +44,7 @@ while i <= index
            [yFS, xFS] = find(IBS, 1, 'first');
            
            colDiffAbs = abs(MRes(yF,xF) - MRes(yFS, xFS));
-           if colDiffAbs < 5/255
+           if colDiffAbs < 3/255
                segRes(IBS) = i;
                comb = 1;
            end         

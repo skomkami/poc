@@ -38,7 +38,7 @@ while iStack > 0
     y = coords(1);
     x = coords(2);
     
-    if not((y - 3) > 1 && (y + 3) < imgSize(1) && (x - 3) > 1 && (x + 3) < imgSize(2))
+    if not((y - 3) >= 1 && (y + 3) <= imgSize(1) && (x - 3) >= 1 && (x + 3) <= imgSize(2))
         continue;        
     end
     
