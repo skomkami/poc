@@ -26,7 +26,7 @@ stack(iStack,:) = coordinates;
 segmented(y,x) = 1;
 visited(y,x) = 1;
 
-threshold = 50;
+threshold = 30;
 
 nS = 0;
 mV = 0;
@@ -38,7 +38,7 @@ while iStack > 0
     y = coords(1);
     x = coords(2);
     
-    if not((y - 3) > 1 && (y + 3) < imgSize(1) && (x - 3) > 1 && (x + 3) < imgSize(2))
+    if not((y - 3) >= 1 && (y + 3) <= imgSize(1) && (x - 3) >= 1 && (x + 3) <= imgSize(2))
         continue;        
     end
     
