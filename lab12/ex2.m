@@ -38,7 +38,7 @@ mesh(f1,f2,H);
 
 [y,x] = size(img);
 
-filtr = fspecial('gaussian', y, 5);
+filtr = fspecial('gaussian', y, 25);
 
 filtr = mat2gray(filtr);
 figure;

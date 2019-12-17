@@ -38,4 +38,4 @@ imshow(getShape(indexed, 'square'))
 subplot(2,2,3);
 imshow(getShape(indexed, 'triangle'))
 subplot(2,2,4);
-imshow(getShape(indexed, 'cross'))
+imshow(getShape(indexed, 'L'))
