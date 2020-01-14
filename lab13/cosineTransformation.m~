@@ -1,0 +1,7 @@
+function cosTiles = cosineTransformation(tiles)
+s = size(tiles);
+YY = s(1);
+XX = 
+
+end
+

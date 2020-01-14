@@ -15,3 +15,7 @@ V = YCBCR(:,:,3);
 tilesY = split(Y,8);
 
 tilesY = int8(tilesY - 128);
+
+dct = dct2(tilesY(1,1,:,:));
+reshape(dct,[8,8])
+
