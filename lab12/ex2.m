@@ -23,10 +23,14 @@ A = log10(A+1);
 
 F = angle(Y.*(A>0.0001));
 
-filtered = F.*Hd;
+filtered = Y.*Hd;
+
+reverse = ifftshift(filtered);
+reverse = ifft2(reverse);
+
 
 figure;
-imshow(filtered);
+imshow(reverse,[]);
 
 h = fwind1(Hd,hanning(21));
 [H f1 f2] = freqz2(h,512,512);
