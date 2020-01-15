@@ -4,8 +4,8 @@ img = imread('lunar.bmp');
 
 th = 10;
 Y = fft2(img);
-fft2abs = log10(abs(Y)+1);
 Y = fftshift(Y);
+fft2abs = log10(abs(Y)+1);
 F = angle(Y.*(fft2abs>0.0001));
 
 figure;
